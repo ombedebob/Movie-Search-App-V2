@@ -1,0 +1,158 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Nunito',sans-serif;
+  background: #FF1563;
+}
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.nav-section{
+  top: 0;
+  position: sticky;
+  z-index: 1000;
+}
+
+.nav_bar{
+  background: black;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center ;
+  
+}
+
+.nav_bar h2{
+  color: white;
+  margin-left: 10px;
+  position: relative;
+}
+.nav_bar h2::before{
+  content: "";
+  bottom: 0;
+  position: absolute;
+  height: 5px;
+  width: 0;
+  background: #FF1563;
+  transition: 0.4s ease;
+  border-radius: 5px;
+}
+.nav_bar h2:hover::before{
+  width: 100%;
+}
+
+.logo_wrapper{
+  width: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+}
+
+.logo_wrapper span{
+  height: 20px;
+  width: 20px;
+  background: #FF1563;
+  border-radius: 35%;
+}
+
+.movie_section{
+  position: relative;
+}
+
+.search_bar{
+  top: 0;
+  position: sticky;
+  z-index: 2000;
+  padding: 10px;
+  background: #050619;
+  display: flex;
+  flex: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px
+}
+
+.search_bar input{
+  font-style: inherit;
+  padding: 5px 15px;
+  border: 2px solid #FF1563;
+  border-radius: 20px;
+  background: transparent;
+  outline: none;
+  color: #fff;
+}
+
+.search_bar button{
+  padding: 5px 10px;
+  font-style: inherit;
+  border: 2px solid #FF1563;
+  border-radius: 20px;
+  background: transparent;
+  outline: none;
+  color: #fff;
+}
+
+
+#movie_results{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+.movie_item{
+  gap: 5px;
+  display: flex;
+  align-items: center ;
+  background: #FF1563;
+}
+.movie-poster{
+  border-radius: 10px;
+  margin: 10px;background: #FF1563;
+  transition: 0.2s ease;
+  box-shadow: rgba(0,0,0,0.5) 0px 4px 6px;
+}
+
+.movie-poster:hover{
+  transform: scale(0.9);
+}
+
+#movieDescription{
+  margin: 10px 0;
+  padding: 5px 10px;
+  font-style: inherit;
+  border-radius: 20px;
+  background: #050619;
+  border: 2px solid #fff;
+  outline: none;
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+#movieDescription:hover{
+  background: #FF1563;
+  transform: scale(1.1);
+}
+
+.description-box h3,.description-box p{
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .movie_item{
+    flex-direction: row;
+  }
+  
+  .movie-poster{
+    width: 150px;
+  }
+  
+}
